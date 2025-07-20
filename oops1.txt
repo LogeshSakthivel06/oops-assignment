@@ -1,0 +1,25 @@
+#include <iostream>
+
+class Rectangle {
+private:
+    int length, breadth;
+
+public:
+    void setDimensions(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    void display() {
+        cout << "Length: " << length << endl;
+        cout << "Breadth: " << breadth << endl;
+        cout << "Area: " << length * breadth << endl;
+    }
+};
+
+int main() {
+    Rectangle rect;
+    rect.setDimensions(10, 5);
+    rect.display();
+    return 0;
+}

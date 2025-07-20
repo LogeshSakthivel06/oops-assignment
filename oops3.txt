@@ -1,0 +1,30 @@
+#include <iostream>
+
+class Counter {
+private:
+    static int count; // static member to track object count
+
+public:
+    // Constructor increases count each time an object is created
+    Counter() {
+        count++;
+    }
+
+    // Static function to get the count
+    static int getCount() {
+        return count;
+    }
+};
+
+// Initialize static member
+int Counter::count = 0;
+
+int main() {
+    // Creating multiple objects
+    Counter c1, c2, c3, c4;
+
+    // Displaying the count
+    cout << "Number of objects created: " << Counter::getCount() << endl;
+
+    return 0;
+}

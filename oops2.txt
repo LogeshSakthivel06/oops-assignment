@@ -1,0 +1,51 @@
+#include <iostream>
+
+class Sample {
+private:
+    int a, b;
+
+public:
+    // Default constructor
+    Sample() {
+        a = 0;
+        b = 0;
+        cout << "Default constructor called\n";
+    }
+
+    // Parameterized constructor
+    Sample(int x, int y) {
+        a = x;
+        b = y;
+        cout << "Parameterized constructor called\n";
+    }
+
+    // Copy constructor
+    Sample(const Sample &obj) {
+        a = obj.a;
+        b = obj.b;
+        cout << "Copy constructor called\n";
+    }
+
+    // Destructor
+    ~Sample() {
+        cout << "Destructor called for object with values: " << a << ", " << b << endl;
+    }
+
+    // Display function
+    void display() {
+        cout << "a = " << a << ", b = " << b << endl;
+    }
+};
+
+int main() {
+    Sample obj1;              // Default constructor
+    obj1.display();
+
+    Sample obj2(10, 20);      // Parameterized constructor
+    obj2.display();
+
+    Sample obj3 = obj2;       // Copy constructor
+    obj3.display();
+
+    return 0;
+}
